@@ -1,0 +1,11 @@
+.ipynb_checkpoints/
+books/
+venv/
+*.html
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.synctex.gz
+*.toc
