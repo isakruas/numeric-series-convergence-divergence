@@ -376,33 +376,42 @@
 	\end{frame}
 	
 	\begin{frame}{Séries Alternadas}
-		Para as somas parciais pares, temos que:
-		\begin{align*}
-			& s_{2} = b_1 - b_2 \geq 0                                                                                    \\
-			& s_{4} = (b_1 - b_2) + (b_3 - b_4) \geq s_2                                                                  \\
-			& \quad \vdots                                                                                                \\
-			& s_{2n} = (b_1 - b_2) + (b_3 - b_4) + \cdots + (b_{2n-1} - b_{2n})                                           \\
-			& \text{\hspace{0.5cm}}= s_{2n-2} + (b_{2n-1} - b_{2n})                                                       \\
-			& \text{\hspace{0.5cm}}= b_1 - (b_2 - b_3) - (b_4 - b_5) - \cdots - (b_{2n-2} - b_{2n-1}) - b_n \geq s_{2n-2}
-		\end{align*}
-		A sequência das somas parciais pares é crescente e limitada superiormente, uma vez que para cada termo subtraído, existe um termo não maior que este adicionado antes.
+		\justifying
+Para as somas parciais pares, temos as seguintes relações:
+\begin{align*}
+	s_{2} &= b_1 - b_2 \geq 0, \\
+	s_{4} &= s_{2} + (b_3 - b_4) \geq s_{2}, \\
+	&\vdots \\
+	s_{2n} &= s_{2n-2} + (b_{2n-1} - b_{2n}) \geq s_{2n-2},
+\end{align*}
+
+Isso indica que:
+$$0 \leq s_2 \leq s_4 \leq s_6 \leq \ldots \leq s_{2n} \leq \ldots \leq b_1 $$
+
+A sequência de somas parciais pares $\{s_{2n}\}$ é crescente e limitada superiormente por $b_1$, o que prova sua convergência pelo Teorema da Convergência Monótona.
 	\end{frame}
 	
 	\begin{frame}{Séries Alternadas}
-		Para as somas parciais ímpares, observamos que:
-		\begin{align*}
-			& s_{1} = b_1                                                  \\
-			& s_{3} = s_{2} + b_3 \leq s_{2} + b_2 = s_{1}                 \\
-			& s_{5} = s_{4} + b_5 \leq s_{4} + b_4 = s_{3}                 \\
-			& \quad \vdots                                                 \\
-			& s_{2n+1} = s_{2n} + b_{2n+1} \leq s_{2n} + b_{2n} = s_{2n-1}
-		\end{align*}
-		A sequência das somas parciais ímpares é decrescente e limitada inferiormente por zero.
-		
+Para as somas parciais ímpares, temos:
+\begin{align*}
+	s_{1} &= b_1, \\
+	s_{3} &= s_{1} + (b_3 - b_2), \\
+	s_{5} &= s_{3} + (b_5 - b_4), \\
+	&\quad \vdots                                                 \\
+	s_{2n+1} &= s_{2n-1} + (b_{2n+1} - b_{2n}),
+\end{align*}
+E isso nos leva a concluir que:
+$$s_{1} \geq s_{3} \geq s_{5} \geq \ldots \geq s_{2n+1} \geq \ldots$$
+
+A sequência de somas parciais ímpares $\{s_{2n+1}\}$ é decrescente e limitada inferiormente pela soma da série (que é o mesmo limite da sequência $\{s_{2n}\}$), garantindo assim sua convergência.
 	\end{frame}
 	
 	\begin{frame}{Séries Alternadas}
-		Dado que $b_n \to 0$, a diferença entre uma soma parcial ímpar e a soma parcial par anterior tende a zero, e assim as sequências de somas parciais pares e ímpares convergem para o mesmo limite. Isso mostra que a série alternada é convergente
+	As aproximações fornecidas pelas somas parciais ímpares e pares são tais que:
+	$$ s_{2n+1} - s_{2n} = b_{2n+1} \rightarrow 0 \text{ quando } n \rightarrow \infty,$$
+	demonstrando que as diferenças entre somas parciais consecutivas decaem para zero à medida que $n$ aumenta. 
+	$\newline\newline$
+	Porque as sequências $\{s_{2n}\}$ (crescente e limitada superiormente) e $\{s_{2n+1}\}$ (decrescente e limitada inferiormente) têm o mesmo limite e as diferenças entre elas tendem a zero, ambas convergem para o mesmo valor. Isso prova que a série alternada é convergente.
 	\end{frame}
 	
 	\begin{frame}{Séries Alternadas}
